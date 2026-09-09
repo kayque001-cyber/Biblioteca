@@ -1,33 +1,111 @@
-{% extends 'pages/base.html' %}
+{% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="livro">
-    <h1>O Pequeno Príncipe</h1>
+    <title>Livros - Biblioteca Escolar</title>
 
-    <p><strong>Autor:</strong> Antoine de Saint-Exupéry</p>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
-    <p><strong>Categoria:</strong> Literatura / Fantasia</p>
+<body>
 
-    <p><strong>Editora:</strong> Agir</p>
+    <header class="header">
+        <div class="container">
+            <h1>Biblioteca Escolar</h1>
 
-    <p><strong>Ano de publicação:</strong> 1943</p>
+            <nav>
+                <a href="{% url 'inicio' %}">Início</a>
+                <a href="{% url 'lista_livros' %}">Livros</a>
+                <a href="/admin/">Gerenciar</a>
+            </nav>
+        </div>
+    </header>
 
-    <p><strong>ISBN:</strong> 9788522031447</p>
+    <main class="container">
 
-    <p><strong>Quantidade de exemplares:</strong> 5</p>
+        <section class="hero">
+            <h2>Livros disponíveis</h2>
+            <p>Consulte os livros cadastrados na biblioteca escolar.</p>
+        </section>
 
-    <p><strong>Exemplares disponíveis:</strong> 3</p>
+        <section class="livros">
 
-    <h2>Descrição</h2>
+            {% if livros %}
 
-    <p>
-        O Pequeno Príncipe é uma obra de Antoine de Saint-Exupéry
-        que conta a história de um pequeno príncipe que viaja por
-        diferentes planetas e conhece diversos personagens.
-        A história aborda temas como amizade, amor, responsabilidade
-        e a importância de enxergar além das aparências.
-    </p>
-</div>
+                <div class="cards">
 
-{% endblock %}
+                    {% for livro in livros %}
+
+                        <div class="card">
+
+                            <h3>{{ livro.titulo }}</h3>
+
+                            <p>
+                                <strong>Autor:</strong>
+                                {{ livro.autor }}
+                            </p>
+
+                            <p>
+                                <strong>Categoria:</strong>
+                                {{ livro.categoria }}
+                            </p>
+
+                            <p>
+                                <strong>Editora:</strong>
+                                {{ livro.editora }}
+                            </p>
+
+                            <p>
+                                <strong>Ano:</strong>
+                                {{ livro.ano_publicacao }}
+                            </p>
+
+                            <p>
+                                <strong>ISBN:</strong>
+                                {{ livro.isbn }}
+                            </p>
+
+                            <p>
+                                <strong>Disponíveis:</strong>
+                                {{ livro.disponiveis }}
+                            </p>
+
+                            {% if livro.descricao %}
+                                <p>
+                                    <strong>Descrição:</strong>
+                                    {{ livro.descricao }}
+                                </p>
+                            {% endif %}
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="card">
+                    <h3>Nenhum livro cadastrado</h3>
+                    <p>
+                        Ainda não existem livros cadastrados na biblioteca.
+                    </p>
+                    <a href="/admin/">Cadastrar livros pelo Admin</a>
+                </div>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Biblioteca Escolar</p>
+    </footer>
+
+</body>
+</html>

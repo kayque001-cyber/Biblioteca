@@ -1,138 +1,498 @@
+/* =========================================================
+   BIBLIOTECA ESCOLAR
+   CSS PRINCIPAL
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
 
 .container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* CABEÇALHO */
 
-.cabecalho {
-    background-color: #1f3c88;
-    padding: 20px 0;
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    background: linear-gradient(135deg, #111827, #1e293b);
     color: white;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.18);
 }
 
-.cabecalho .container {
+.header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-.cabecalho h1 {
-    font-size: 26px;
+.header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
-.cabecalho nav {
+.header h1::before {
+    content: "📚 ";
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+.header nav {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 8px;
 }
 
-.cabecalho nav a {
-    color: white;
+.header nav a {
+    color: #e5e7eb;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
 }
 
-.cabecalho nav a:hover {
-    text-decoration: underline;
+.header nav a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
 }
 
-/* BANNER PRINCIPAL */
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
-    background-color: #dfe8ff;
-    padding: 80px 0;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.18), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.18), transparent 30%),
+        linear-gradient(135deg, #0f172a, #1e293b 55%, #334155);
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    top: -180px;
+    right: -100px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    bottom: -150px;
+    left: -80px;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
-    font-size: 38px;
-    margin-bottom: 15px;
-    color: #1f3c88;
+    max-width: 750px;
+    margin: 0 auto 20px;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
 }
 
 .hero p {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    color: #cbd5e1;
     font-size: 18px;
-    margin-bottom: 30px;
+    line-height: 1.7;
 }
 
-.botao {
-    display: inline-block;
-    background-color: #1f3c88;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 6px;
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+   ========================================================= */
+
+.hero .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: white;
+    color: #111827;
+
+    padding: 14px 26px;
+    border-radius: 10px;
+
     text-decoration: none;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 700;
+
+    border: none;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.25s ease;
 }
 
-.botao:hover {
-    background-color: #162d68;
+.hero .btn::after {
+    content: "→";
+    font-size: 18px;
 }
 
-/* SOBRE */
-
-.sobre {
-    padding: 60px 0;
-    text-align: center;
+.hero .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-.sobre h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
 
-.sobre > .container > p {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
-}
+/* =========================================================
+   SEÇÃO DOS CARDS
+   ========================================================= */
 
-/* CARDS */
+.cards-section {
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
 
 .cards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    flex-wrap: wrap;
 }
 
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
 .card {
-    background-color: white;
-    width: 300px;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05),
+        0 15px 40px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(90deg, #2563eb, #6366f1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: #dbeafe;
+
+    box-shadow:
+        0 12px 25px rgba(15, 23, 42, 0.08),
+        0 25px 50px rgba(37, 99, 235, 0.08);
 }
 
 .card h3 {
-    color: #1f3c88;
-    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 14px;
 }
 
 .card p {
-    line-height: 1.5;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
 }
 
-/* RODAPÉ */
 
-.rodape {
-    background-color: #1f3c88;
-    color: white;
+/* =========================================================
+   LINKS DOS CARDS
+   ========================================================= */
+
+.card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: all 0.2s ease;
+}
+
+.card a::after {
+    content: "→";
+    transition: transform 0.2s ease;
+}
+
+.card a:hover {
+    color: #1d4ed8;
+}
+
+.card a:hover::after {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   PÁGINA DE LIVROS
+   ========================================================= */
+
+.livros {
+    padding: 60px 0 80px;
+}
+
+.livros .cards {
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   CARD DOS LIVROS
+   ========================================================= */
+
+.livros .card {
+    min-height: 100%;
+}
+
+.livros .card h3 {
+    color: #111827;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.livros .card p {
+    margin-bottom: 10px;
+}
+
+.livros .card strong {
+    color: #334155;
+}
+
+
+/* =========================================================
+   ESTADO SEM LIVROS
+   ========================================================= */
+
+.livros > .card {
+    max-width: 600px;
+    margin: 30px auto;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
 }
 
+.livros > .card h3 {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    margin-top: auto;
+
+    background: #0f172a;
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 28px 0;
+
+    border-top: 1px solid #1e293b;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+    animation: aparecer 0.7s ease forwards;
+}
+
+.cards .card {
+    animation: aparecer 0.6s ease forwards;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .header nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .header nav a {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-section {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .header nav {
+        gap: 3px;
+    }
+
+    .header nav a {
+        padding: 7px 9px;
+    }
+}
