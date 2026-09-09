@@ -8,9 +8,10 @@ class Livro(models.Model):
     editora = models.CharField(max_length=100)
     ano_publicacao = models.IntegerField()
     categoria = models.CharField(max_length=100)
-    quantidade = models.IntegerField(default=1)
-    disponiveis = models.IntegerField(default=1)
+    quantidade = models.PositiveIntegerField(default=1)
+    disponiveis = models.PositiveIntegerField(default=1)
     descricao = models.TextField(blank=True)
 
     def __str__(self):
         return self.titulo
+
