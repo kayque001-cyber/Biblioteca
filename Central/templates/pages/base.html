@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biblioteca Escolar</title>
+
+    <link rel="stylesheet" href="{% static 'biblioteca/css/style.css' %}">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="container">
+            <h1>Biblioteca Escolar</h1>
+
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Livros</a>
+                <a href="#">Cadastrar Livro</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Bem-vindo à Biblioteca Escolar</h2>
+
+                <p>
+                    Consulte e gerencie o acervo de livros
+                    da nossa biblioteca.
+                </p>
+
+                <a href="#" class="botao">Ver livros</a>
+            </div>
+        </section>
+
+        <section class="sobre">
+            <div class="container">
+                <h2>Biblioteca Escolar</h2>
+
+                <p>
+                    Sistema desenvolvido para facilitar o gerenciamento
+                    dos livros, autores e exemplares disponíveis na biblioteca.
+                </p>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Livros</h3>
+                        <p>Consulte os livros cadastrados no acervo.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Disponibilidade</h3>
+                        <p>Verifique quais exemplares estão disponíveis.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Gerenciamento</h3>
+                        <p>Cadastre, edite e remova livros do sistema.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© 2026 Biblioteca Escolar</p>
+    </footer>
+
+</body>
+</html>

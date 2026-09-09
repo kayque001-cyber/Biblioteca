@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background-color: #1f3c88;
+    padding: 20px 0;
+    color: white;
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho h1 {
+    font-size: 26px;
+}
+
+.cabecalho nav {
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cabecalho nav a:hover {
+    text-decoration: underline;
+}
+
+/* BANNER PRINCIPAL */
+
+.hero {
+    background-color: #dfe8ff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #1f3c88;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #1f3c88;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: #162d68;
+}
+
+/* SOBRE */
+
+.sobre {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.sobre h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.sobre > .container > p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #1f3c88;
+    margin-bottom: 15px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    background-color: #1f3c88;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
