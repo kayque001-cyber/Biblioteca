@@ -2,16 +2,15 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}Biblioteca Escolar{% endblock %}</title>
 
-    <!-- CSS próprio -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <!-- Bootstrap 5.3.8 -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -20,8 +19,9 @@
 
 <body>
 
-    <!-- Cabeçalho -->
+    <!-- HEADER -->
     <header class="header">
+
         <div class="container">
 
             <h1>Biblioteca Escolar</h1>
@@ -33,75 +33,145 @@
             </nav>
 
         </div>
+
     </header>
 
 
-    <!-- Conteúdo principal -->
+    <!-- CONTEÚDO -->
     <main>
 
         {% block content %}
 
-        <!-- Seção principal -->
+        <!-- HERO -->
         <section class="hero">
-            <div class="container">
 
-                <h2>Bem-vindo à Biblioteca Escolar</h2>
+            <div class="container text-center">
+
+                <h2>
+                    Bem-vindo à Biblioteca Escolar
+                </h2>
 
                 <p>
-                    Consulte nosso acervo de livros de forma rápida e fácil.
+                    Consulte nosso acervo de forma rápida,
+                    simples e organizada.
                 </p>
 
-                <a href="{% url 'lista_livros' %}" class="btn">
+                <a
+                    href="{% url 'lista_livros' %}"
+                    class="btn"
+                >
                     Ver livros
                 </a>
 
             </div>
+
         </section>
 
 
-        <!-- Cards -->
+        <!-- ESTATÍSTICAS -->
+        <section class="container stats-section">
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        {{ total_livros }}
+                    </span>
+
+                    <span class="stat-label">
+                        Livros cadastrados
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        {{ total_exemplares }}
+                    </span>
+
+                    <span class="stat-label">
+                        Exemplares
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number">
+                        {{ total_disponiveis }}
+                    </span>
+
+                    <span class="stat-label">
+                        Disponíveis
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARDS -->
         <section class="container cards-section">
 
             <div class="cards">
 
-                <!-- Card Livros -->
                 <div class="card">
-                    <h3>Livros</h3>
+
+                    <h3>
+                        Livros
+                    </h3>
 
                     <p>
-                        Consulte os livros disponíveis no acervo
-                        da biblioteca.
+                        Consulte os livros disponíveis
+                        no acervo da biblioteca.
                     </p>
 
                     <a href="{% url 'lista_livros' %}">
                         Ver livros
                     </a>
+
                 </div>
 
 
-                <!-- Card Disponibilidade -->
                 <div class="card">
-                    <h3>Disponibilidade</h3>
+
+                    <h3>
+                        Disponibilidade
+                    </h3>
 
                     <p>
-                        Confira quais livros estão disponíveis
-                        para consulta.
+                        Confira quais exemplares estão
+                        disponíveis para consulta.
                     </p>
+
+                    <a href="{% url 'lista_livros' %}">
+                        Consultar acervo
+                    </a>
+
                 </div>
 
 
-                <!-- Card Gerenciamento -->
                 <div class="card">
-                    <h3>Gerenciamento</h3>
+
+                    <h3>
+                        Gerenciamento
+                    </h3>
 
                     <p>
-                        O administrador pode cadastrar, editar
-                        e excluir livros.
+                        Cadastre, edite e exclua livros
+                        através do painel administrativo.
                     </p>
 
                     <a href="/admin/">
                         Acessar Admin
                     </a>
+
                 </div>
 
             </div>
@@ -113,20 +183,24 @@
     </main>
 
 
-    <!-- Rodapé -->
+    <!-- FOOTER -->
     <footer class="footer">
 
         <div class="container">
-            <p>© 2026 Biblioteca Escolar</p>
+
+            <p>
+                © 2026 Biblioteca Escolar
+            </p>
+
         </div>
 
     </footer>
 
 
-    <!-- Bootstrap JavaScript -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
 
 </body>
+
 </html>
