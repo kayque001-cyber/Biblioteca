@@ -64,6 +64,15 @@
 
                     <!-- CABEÇALHO DO LIVRO -->
                     <div class="detalhe-header">
+                        {% if livro.capa %}
+
+                            <img
+                                src="{{ livro.capa.url }}"
+                                alt="Capa do livro {{ livro.titulo }}"
+                                class="capa-detalhe"
+                            >
+
+                        {% endif %}
 
                         <span class="detalhe-categoria">
                             {{ livro.categoria }}

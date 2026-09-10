@@ -113,6 +113,15 @@
 
                             <!-- CARD DO LIVRO -->
                             <div class="card">
+                                {% if livro.capa %}
+
+                                    <img
+                                        src="{{ livro.capa.url }}"
+                                        alt="Capa do livro {{ livro.titulo }}"
+                                        class="capa-lista"
+                                    >
+
+                                {% endif %}
 
                                 <h3>
                                     {{ livro.titulo }}

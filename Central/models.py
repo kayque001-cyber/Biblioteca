@@ -11,7 +11,12 @@ class Livro(models.Model):
     quantidade = models.PositiveIntegerField(default=1)
     disponiveis = models.PositiveIntegerField(default=1)
     descricao = models.TextField(blank=True)
+    capa = models.ImageField(
+        upload_to='capas/',
+        blank=True,
+        null=True,
+        verbose_name='Capa do livro',
+    )
 
     def __str__(self):
         return self.titulo
-
