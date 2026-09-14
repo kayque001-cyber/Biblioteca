@@ -1,11 +1,12 @@
 from django import forms
 
-from .models import Livro
+from .models import Livro, Aluno
 
 
 class LivroForm(forms.ModelForm):
     class Meta:
         model = Livro
+
         fields = [
             'titulo',
             'autor',
@@ -33,16 +34,54 @@ class LivroForm(forms.ModelForm):
         }
 
         widgets = {
-            'titulo': forms.TextInput(attrs={'class': 'form-control'}),
-            'autor': forms.TextInput(attrs={'class': 'form-control'}),
-            'isbn': forms.TextInput(attrs={'class': 'form-control'}),
-            'editora': forms.TextInput(attrs={'class': 'form-control'}),
-            'ano_publicacao': forms.NumberInput(attrs={'class': 'form-control'}),
-            'categoria': forms.TextInput(attrs={'class': 'form-control'}),
-            'quantidade': forms.NumberInput(attrs={'class': 'form-control', 'min': 0}),
-            'disponiveis': forms.NumberInput(attrs={'class': 'form-control', 'min': 0}),
-            'descricao': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
-            'capa': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+            'titulo': forms.TextInput(
+                attrs={'class': 'form-control'}
+            ),
+
+            'autor': forms.TextInput(
+                attrs={'class': 'form-control'}
+            ),
+
+            'isbn': forms.TextInput(
+                attrs={'class': 'form-control'}
+            ),
+
+            'editora': forms.TextInput(
+                attrs={'class': 'form-control'}
+            ),
+
+            'ano_publicacao': forms.NumberInput(
+                attrs={'class': 'form-control'}
+            ),
+
+            'categoria': forms.TextInput(
+                attrs={'class': 'form-control'}
+            ),
+
+            'quantidade': forms.NumberInput(
+                attrs={
+                    'class': 'form-control',
+                    'min': 0
+                }
+            ),
+
+            'disponiveis': forms.NumberInput(
+                attrs={
+                    'class': 'form-control',
+                    'min': 0
+                }
+            ),
+
+            'descricao': forms.Textarea(
+                attrs={
+                    'class': 'form-control',
+                    'rows': 4
+                }
+            ),
+
+            'capa': forms.ClearableFileInput(
+                attrs={'class': 'form-control'}
+            ),
         }
 
     def clean(self):
@@ -60,3 +99,52 @@ class LivroForm(forms.ModelForm):
                 )
 
         return cleaned_data
+
+
+class AlunoForm(forms.ModelForm):
+    class Meta:
+        model = Aluno
+
+        fields = [
+            'nome',
+            'matricula',
+            'email',
+            'turma',
+        ]
+
+        labels = {
+            'nome': 'Nome completo',
+            'matricula': 'Matrícula',
+            'email': 'E-mail',
+            'turma': 'Turma',
+        }
+
+        widgets = {
+            'nome': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Digite o nome completo'
+                }
+            ),
+
+            'matricula': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Digite a matrícula'
+                }
+            ),
+
+            'email': forms.EmailInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Digite o e-mail'
+                }
+            ),
+
+            'turma': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Digite a turma'
+                }
+            ),
+        }

@@ -24,29 +24,44 @@
         <h1>Biblioteca Escolar</h1>
 
         <nav>
-          <a href="{% url 'inicio' %}">Início</a>
+          <a href="{% url 'inicio' %}">
+            Início
+          </a>
 
-          <a href="{% url 'lista_livros' %}"> Livros </a>
+          <a href="{% url 'lista_livros' %}">
+            Livros
+          </a>
 
-          <a href="/admin/"> Gerenciar </a>
+          <a href="/admin/">
+            Gerenciar
+          </a>
 
-          <a href="{% url 'lista_emprestimos' %}"> Empréstimos </a>
+          <a href="{% url 'lista_emprestimos' %}">
+            Empréstimos
+          </a>
         </nav>
       </div>
     </header>
+
 
     <!-- CONTEÚDO -->
 
     <main class="emprestimos">
       <div class="container">
+
         <div class="emprestimos-header">
           <h2>Empréstimos</h2>
 
-          <p>Consulte os empréstimos realizados na biblioteca.</p>
+          <p>
+            Consulte os empréstimos realizados na biblioteca.
+          </p>
         </div>
 
+
         <div class="emprestimos-tabela">
+
           <table>
+
             <thead>
               <tr>
                 <th>Aluno</th>
@@ -58,35 +73,55 @@
               </tr>
             </thead>
 
+
             <tbody>
+
               {% for emprestimo in emprestimos %}
 
               <tr>
-                <td class="emprestimo-aluno">{{ emprestimo.aluno.nome }}</td>
 
-                <td class="emprestimo-livro">{{ emprestimo.livro.titulo }}</td>
+                <td class="emprestimo-aluno">
+                  {{ emprestimo.aluno.nome }}
+                </td>
 
-                <td>{{ emprestimo.data_emprestimo|date:"d/m/Y" }}</td>
-
-                <td>{{ emprestimo.data_devolucao_prevista|date:"d/m/Y" }}</td>
-
-                <td>
-                  {% if emprestimo.data_devolucao %} {{
-                  emprestimo.data_devolucao|date:"d/m/Y" }} {% else %} - {%
-                  endif %}
+                <td class="emprestimo-livro">
+                  {{ emprestimo.livro.titulo }}
                 </td>
 
                 <td>
+                  {{ emprestimo.data_emprestimo|date:"d/m/Y" }}
+                </td>
+
+                <td>
+                  {{ emprestimo.data_devolucao_prevista|date:"d/m/Y" }}
+                </td>
+
+                <td>
+                  {% if emprestimo.data_devolucao %}
+                    {{ emprestimo.data_devolucao|date:"d/m/Y" }}
+                  {% else %}
+                    -
+                  {% endif %}
+                </td>
+
+                <td>
+
                   {% if emprestimo.status == 'Emprestado' %}
 
-                  <span class="status-emprestado"> Emprestado </span>
+                    <span class="status-emprestado">
+                      Emprestado
+                    </span>
 
                   {% else %}
 
-                  <span class="status-devolvido"> Devolvido </span>
+                    <span class="status-devolvido">
+                      Devolvido
+                    </span>
 
                   {% endif %}
+
                 </td>
+
               </tr>
 
               {% empty %}
@@ -98,18 +133,28 @@
               </tr>
 
               {% endfor %}
+
             </tbody>
+
           </table>
+
         </div>
+
       </div>
     </main>
+
 
     <!-- FOOTER -->
 
     <footer class="footer">
       <div class="container">
-        <p>© 2026 Biblioteca Escolar.</p>
+
+        <p>
+          © 2026 Biblioteca Escolar.
+        </p>
+
       </div>
     </footer>
+
   </body>
 </html>
