@@ -16,4 +16,8 @@ urlpatterns = [
         views.detalhe_livro,
         name='detalhe_livro'
     ),
+    path(
+        'emprestimos/', 
+        views.lista_emprestimos, 
+        name='lista_emprestimos'),
 ]

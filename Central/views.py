@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Sum
-from .models import Livro
+from .models import Livro, Emprestimo
 
 
 def inicio(request):
@@ -46,3 +46,12 @@ def detalhe_livro(request, livro_id):
     return render(request, 'pages/detalhe_livro.html', {
         'livro': livro,
     })
+
+def lista_emprestimos(request):
+    emprestimos = Emprestimo.objects.all().order_by('-data_emprestimo')
+
+    return render(
+        request,
+        'pages/emprestimos.html',
+        {'emprestimos': emprestimos}
+    )
