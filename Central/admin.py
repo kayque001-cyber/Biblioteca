@@ -24,6 +24,10 @@ class LivroAdmin(admin.ModelAdmin):
         'ano_publicacao',
     )
 
+    class Media:
+        css = {
+            'all': ('admin/css/custom_admin.css',)
+        }
 
 
 @admin.register(Aluno)
