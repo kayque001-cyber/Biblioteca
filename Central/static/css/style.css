@@ -5,936 +5,953 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
+
 /* =========================================================
    RESET
    ========================================================= */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", Arial, sans-serif;
-  background: #f4f7fb;
-  color: #172033;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: "Inter", Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    /* Espaço para a navbar fixa */
+    padding-top: 78px;
 }
+
 
 /* =========================================================
    CONTAINER
    ========================================================= */
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+
 /* =========================================================
-   HEADER
+   HEADER / NAVBAR
    ========================================================= */
 
 .header {
-  background: linear-gradient(135deg, #111827, #1e293b);
-  color: white;
-  padding: 18px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 5px 25px rgba(15, 23, 42, 0.18);
+    background: linear-gradient(135deg, #111827, #1e293b);
+    color: white;
+    padding: 18px 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    box-shadow: 0 5px 25px rgba(15, 23, 42, 0.18);
 }
 
 .header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .header h1 {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .header h1::before {
-  content: "📚 ";
+    content: "📚 ";
 }
+
 
 /* =========================================================
    NAVEGAÇÃO
    ========================================================= */
 
 .header nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .header nav a {
-  color: #e5e7eb;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 8px;
-  transition: all 0.25s ease;
+    color: #e5e7eb;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
 }
 
 .header nav a:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-1px);
 }
+
 
 /* =========================================================
    HERO
    ========================================================= */
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  padding: 100px 0;
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(59, 130, 246, 0.18),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(99, 102, 241, 0.18),
-      transparent 30%
-    ),
-    linear-gradient(135deg, #0f172a, #1e293b 55%, #334155);
-  color: white;
+    position: relative;
+    overflow: hidden;
+
+    padding: 100px 0;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(59, 130, 246, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(99, 102, 241, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b 55%,
+            #334155
+        );
+
+    color: white;
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  top: -180px;
-  right: -100px;
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    top: -180px;
+    right: -100px;
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 0, 0, 0.06);
-  bottom: -150px;
-  left: -80px;
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    bottom: -150px;
+    left: -80px;
 }
 
 .hero .container {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
-  max-width: 750px;
-  margin: 0 auto 20px;
-  font-size: clamp(36px, 6vw, 64px);
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: -2px;
+    max-width: 750px;
+
+    margin: 0 auto 20px;
+
+    font-size: clamp(36px, 6vw, 64px);
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
 }
 
 .hero p {
-  max-width: 650px;
-  margin: 0 auto 35px;
-  color: color rgb(255, 0, 0);
-  font-size: 18px;
-  line-height: 1.7;
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    line-height: 1.7;
 }
+
 
 /* =========================================================
    BOTÃO PRINCIPAL
    ========================================================= */
 
 .hero .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+    display: inline-flex;
 
-  background: rgb(255, 255, 255);
-  color: #111827;
+    align-items: center;
+    justify-content: center;
 
-  padding: 14px 26px;
-  border-radius: 10px;
+    gap: 8px;
 
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: #111827;
 
-  border: none;
+    padding: 14px 26px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 
-  transition: all 0.25s ease;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    border: none;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.25s ease;
 }
 
 .hero .btn::after {
-  content: "→";
-  font-size: 18px;
+    content: "→";
+    font-size: 18px;
 }
 
 .hero .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
 }
+
 
 /* =========================================================
    SEÇÃO DOS CARDS
    ========================================================= */
 
 .cards-section {
-  padding-top: 70px;
-  padding-bottom: 80px;
+    padding-top: 70px;
+    padding-bottom: 80px;
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
 }
+
 
 /* =========================================================
    CARD
    ========================================================= */
 
 .card {
-  position: relative;
-  background: rgb(255, 255, 255);
+    position: relative;
 
-  padding: 30px;
+    background: rgb(255, 255, 255);
 
-  border-radius: 16px;
-  border: 1px solid #ffffff;
+    padding: 30px;
 
-  box-shadow:
-    0 5px 15px rgba(15, 23, 42, 0.05),
-    0 15px 40px rgba(15, 23, 42, 0.04);
+    border-radius: 16px;
 
-  overflow: hidden;
+    border: 1px solid #ffffff;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05),
+        0 15px 40px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .card::before {
-  content: "";
-  position: absolute;
+    content: "";
 
-  top: 0;
-  left: 0;
+    position: absolute;
 
-  width: 100%;
-  height: 4px;
+    top: 0;
+    left: 0;
 
-  background: linear-gradient(90deg, #2563eb, #6366f1);
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #6366f1
+        );
 }
 
 .card:hover {
-  transform: translateY(-8px);
+    transform: translateY(-8px);
 
-  border-color: #000000;
+    border-color: #000000;
 
-  box-shadow:
-    0 12px 25px rgba(15, 23, 42, 0.08),
-    0 25px 50px rgba(37, 99, 235, 0.08);
+    box-shadow:
+        0 12px 25px rgba(15, 23, 42, 0.08),
+        0 25px 50px rgba(37, 99, 235, 0.08);
 }
 
 .card h3 {
-  font-size: 21px;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 14px;
+    font-size: 21px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin-bottom: 14px;
 }
 
 .card p {
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 18px;
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
 }
+
 
 /* =========================================================
    LINKS DOS CARDS
    ========================================================= */
 
 .card a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
+    display: inline-flex;
 
-  color: #ffffff;
+    align-items: center;
 
-  text-decoration: none;
+    gap: 7px;
 
-  font-size: 14px;
-  font-weight: 700;
+    color: #ffffff;
 
-  transition: all 0.2s ease;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.2s ease;
 }
 
 .card a::after {
-  content: "→";
-  transition: transform 0.2s ease;
+    content: "→";
+
+    transition: transform 0.2s ease;
 }
 
 .card a:hover {
-  color: #6582ff;
+    color: #6582ff;
 }
 
 .card a:hover::after {
-  transform: translateX(4px);
+    transform: translateX(4px);
 }
+
 
 /* =========================================================
    PÁGINA DE LIVROS
    ========================================================= */
 
 .livros {
-  padding: 60px 0 80px;
+    padding: 60px 0 80px;
 }
 
 .livros .cards {
-  margin-top: 35px;
+    margin-top: 35px;
 }
 
-/* =========================================================
-   CARD DOS LIVROS
-   ========================================================= */
-
 .livros .card {
-  min-height: 100%;
+    min-height: 100%;
 }
 
 .livros .card h3 {
-  color: #111827;
-  font-size: 20px;
-  margin-bottom: 20px;
+    color: #111827;
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
 }
 
 .livros .card p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .livros .card strong {
-  color: #334155;
+    color: #334155;
 }
+
 
 /* =========================================================
    ESTADO SEM LIVROS
    ========================================================= */
 
 .livros > .card {
-  max-width: 600px;
-  margin: 30px auto;
-  text-align: center;
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    text-align: center;
 }
 
 .livros > .card h3 {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
+
 
 /* =========================================================
    FOOTER
    ========================================================= */
 
 .footer {
-  margin-top: auto;
+    margin-top: auto;
 
-  background: #0f172a;
+    background: #0f172a;
 
-  color: #94a3b8;
+    color: #94a3b8;
 
-  text-align: center;
+    text-align: center;
 
-  padding: 28px 0;
+    padding: 28px 0;
 
-  border-top: 1px solid #1e293b;
+    border-top: 1px solid #1e293b;
 }
 
 .footer p {
-  margin: 0;
-  font-size: 13px;
+    margin: 0;
+
+    font-size: 13px;
 }
+
 
 /* =========================================================
    ANIMAÇÕES
    ========================================================= */
 
 @keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
 
 .hero h2,
 .hero p,
 .hero .btn {
-  animation: aparecer 0.7s ease forwards;
+    animation: aparecer 0.7s ease forwards;
 }
 
 .cards .card {
-  animation: aparecer 0.6s ease forwards;
+    animation: aparecer 0.6s ease forwards;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero {
-    padding: 80px 0;
-  }
-}
-
-@media (max-width: 650px) {
-  .header .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .header h1 {
-    font-size: 22px;
-  }
-
-  .header nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .header nav a {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-
-  .hero {
-    padding: 70px 0;
-  }
-
-  .hero h2 {
-    font-size: 38px;
-    letter-spacing: -1px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .cards-section {
-    padding-top: 50px;
-    padding-bottom: 60px;
-  }
-
-  .card {
-    padding: 25px;
-  }
-}
-
-@media (max-width: 400px) {
-  .container {
-    width: 92%;
-  }
-
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .header nav {
-    gap: 3px;
-  }
-
-  .header nav a {
-    padding: 7px 9px;
-  }
-}
 
 /* =========================================================
    ESTATÍSTICAS
    ========================================================= */
 
 .stats-section {
-  padding: 50px 0 20px;
+    padding: 50px 0 20px;
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
 }
 
 .stat-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
+    background: white;
 
-  text-align: center;
+    padding: 30px;
 
-  box-shadow:
-    0 5px 15px rgba(15, 23, 42, 0.05),
-    0 15px 40px rgba(15, 23, 42, 0.04);
+    border-radius: 16px;
 
-  transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05),
+        0 15px 40px rgba(15, 23, 42, 0.04);
+
+    transition: all 0.3s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-6px);
+    transform: translateY(-6px);
 
-  box-shadow:
-    0 12px 25px rgba(15, 23, 42, 0.08),
-    0 25px 50px rgba(37, 99, 235, 0.08);
+    box-shadow:
+        0 12px 25px rgba(15, 23, 42, 0.08),
+        0 25px 50px rgba(37, 99, 235, 0.08);
 }
 
 .stat-number {
-  display: block;
+    display: block;
 
-  font-size: 42px;
-  font-weight: 800;
+    font-size: 42px;
 
-  color: #2563eb;
+    font-weight: 800;
 
-  line-height: 1;
+    color: #2563eb;
 
-  margin-bottom: 12px;
+    line-height: 1;
+
+    margin-bottom: 12px;
 }
 
 .stat-label {
-  display: block;
+    display: block;
 
-  color: #64748b;
+    color: #64748b;
 
-  font-size: 14px;
-  font-weight: 600;
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
-/* =========================================================
-   RESPONSIVIDADE DAS ESTATÍSTICAS
-   ========================================================= */
-
-@media (max-width: 650px) {
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-section {
-    padding-top: 40px;
-  }
-}
 
 /* =========================================================
    PÁGINA DE DETALHES DO LIVRO
    ========================================================= */
 
 .livro-detalhe {
-  padding: 60px 0 80px;
-  min-height: 70vh;
+    padding: 60px 0 80px;
+
+    min-height: 70vh;
 }
 
 .voltar {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+    display: inline-flex;
 
-  margin-bottom: 25px;
+    align-items: center;
 
-  color: #2563eb;
-  text-decoration: none;
+    gap: 8px;
 
-  font-size: 14px;
-  font-weight: 700;
+    margin-bottom: 25px;
 
-  transition: all 0.2s ease;
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.2s ease;
 }
 
 .voltar:hover {
-  color: #1d4ed8;
-  transform: translateX(-3px);
+    color: #1d4ed8;
+
+    transform: translateX(-3px);
 }
+
 
 /* =========================================================
    CARD PRINCIPAL
    ========================================================= */
 
 .detalhe-card {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
 
-  background: white;
+    margin: 0 auto;
 
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
+    background: white;
 
-  overflow: hidden;
+    border: 1px solid #e5e7eb;
 
-  box-shadow:
-    0 10px 30px rgba(15, 23, 42, 0.06),
-    0 25px 60px rgba(15, 23, 42, 0.05);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06),
+        0 25px 60px rgba(15, 23, 42, 0.05);
 }
 
+
 /* =========================================================
-   CABEÇALHO
+   CABEÇALHO DOS DETALHES
    ========================================================= */
 
 .detalhe-header {
-  padding: 45px;
+    padding: 45px;
 
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(59, 130, 246, 0.15),
-      transparent 30%
-    ),
-    linear-gradient(135deg, #0f172a, #1e293b);
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(59, 130, 246, 0.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b
+        );
 
-  color: white;
+    color: white;
 }
 
 .detalhe-categoria {
-  display: inline-block;
+    display: inline-block;
 
-  margin-bottom: 18px;
-  padding: 7px 13px;
+    margin-bottom: 18px;
 
-  border-radius: 20px;
+    padding: 7px 13px;
 
-  background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
 
-  color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.1);
 
-  font-size: 12px;
-  font-weight: 700;
+    color: #cbd5e1;
 
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
 }
 
 .detalhe-header h2 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 
-  font-size: clamp(30px, 5vw, 46px);
-  font-weight: 800;
+    font-size: clamp(30px, 5vw, 46px);
 
-  line-height: 1.1;
-  letter-spacing: -1px;
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
 }
 
 .detalhe-autor {
-  margin: 0;
+    margin: 0;
 
-  color: #cbd5e1;
+    color: #cbd5e1;
 
-  font-size: 17px;
+    font-size: 17px;
 }
+
 
 /* =========================================================
    INFORMAÇÕES
    ========================================================= */
 
 .detalhe-info {
-  display: grid;
+    display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-  gap: 20px;
+    gap: 20px;
 
-  padding: 40px 45px;
+    padding: 40px 45px;
 }
 
 .info-item {
-  display: flex;
-  flex-direction: column;
+    display: flex;
 
-  padding: 18px;
+    flex-direction: column;
 
-  background: #f8fafc;
+    padding: 18px;
 
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
 }
 
 .info-item span {
-  margin-bottom: 6px;
+    margin-bottom: 6px;
 
-  color: #64748b;
+    color: #64748b;
 
-  font-size: 12px;
-  font-weight: 600;
+    font-size: 12px;
 
-  text-transform: uppercase;
+    font-weight: 600;
+
+    text-transform: uppercase;
 }
 
 .info-item strong {
-  color: #172033;
+    color: #172033;
 
-  font-size: 15px;
+    font-size: 15px;
 }
+
 
 /* =========================================================
    DISPONIBILIDADE
    ========================================================= */
 
 .disponibilidade {
-  margin: 0 45px;
-  padding: 25px;
+    margin: 0 45px;
 
-  border-radius: 14px;
+    padding: 25px;
 
-  background: #f8fafc;
+    border-radius: 14px;
 
-  border: 1px solid #e2e8f0;
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
 }
 
 .disponibilidade .badge {
-  font-size: 13px;
-  padding: 8px 12px;
+    font-size: 13px;
+
+    padding: 8px 12px;
 }
 
 .disponibilidade p {
-  margin: 12px 0 0;
+    margin: 12px 0 0;
 
-  color: #64748b;
+    color: #64748b;
 
-  font-size: 14px;
+    font-size: 14px;
 }
+
 
 /* =========================================================
    DESCRIÇÃO
    ========================================================= */
 
 .descricao {
-  margin: 35px 45px 0;
-  padding-top: 30px;
+    margin: 35px 45px 0;
 
-  border-top: 1px solid #e5e7eb;
+    padding-top: 30px;
+
+    border-top: 1px solid #e5e7eb;
 }
 
 .descricao h3 {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 
-  color: #111827;
+    color: #111827;
 
-  font-size: 20px;
-  font-weight: 800;
+    font-size: 20px;
+
+    font-weight: 800;
 }
 
 .descricao p {
-  color: #64748b;
+    color: #64748b;
 
-  font-size: 15px;
-  line-height: 1.8;
+    font-size: 15px;
+
+    line-height: 1.8;
 }
 
+
 /* =========================================================
-   BOTÕES
+   BOTÕES DOS DETALHES
    ========================================================= */
 
 .detalhe-acoes {
-  display: flex;
-  gap: 12px;
+    display: flex;
 
-  padding: 35px 45px 45px;
+    gap: 12px;
+
+    padding: 35px 45px 45px;
 }
 
 .detalhe-acoes .btn {
-  padding: 11px 18px;
+    padding: 11px 18px;
 
-  border-radius: 9px;
+    border-radius: 9px;
 
-  font-size: 14px;
-  font-weight: 600;
+    font-size: 14px;
+
+    font-weight: 600;
 }
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 650px) {
-  .livro-detalhe {
-    padding: 40px 0 60px;
-  }
-
-  .detalhe-header {
-    padding: 30px 25px;
-  }
-
-  .detalhe-header h2 {
-    font-size: 32px;
-  }
-
-  .detalhe-info {
-    grid-template-columns: 1fr;
-
-    padding: 30px 25px;
-  }
-
-  .disponibilidade {
-    margin: 0 25px;
-  }
-
-  .descricao {
-    margin: 30px 25px 0;
-  }
-
-  .detalhe-acoes {
-    flex-direction: column;
-
-    padding: 30px 25px;
-  }
-
-  .detalhe-acoes .btn {
-    width: 100%;
-  }
-}
 
 /* =========================================================
    CAPAS DOS LIVROS
    ========================================================= */
 
 .capa-lista {
-  display: block;
-  width: 100%;
-  height: 280px;
-  margin: 0 0 22px;
-  object-fit: contain;
-  background: #a39a9a54;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
+    display: block;
+
+    width: 100%;
+
+    height: 280px;
+
+    margin: 0 0 22px;
+
+    object-fit: contain;
+
+    background: #a39a9a54;
+
+    border: 1px solid #ffffff;
+
+    border-radius: 10px;
 }
 
 .capa-detalhe {
-  display: block;
-  width: min(240px, 100%);
-  max-height: 360px;
-  margin: 0 0 28px;
-  object-fit: contain;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
+    display: block;
+
+    width: min(240px, 100%);
+
+    max-height: 360px;
+
+    /* Centraliza a capa */
+    margin: 0 auto 28px;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
 }
+
 
 /* =========================================================
    PÁGINA DE EMPRÉSTIMOS
    ========================================================= */
 
 .emprestimos {
-  padding: 60px 0 80px;
-  min-height: 70vh;
+    padding: 60px 0 80px;
+
+    min-height: 70vh;
 }
 
 .emprestimos-header {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .emprestimos-header h2 {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 
-  color: #111827;
+    color: #111827;
 
-  font-size: 32px;
-  font-weight: 800;
+    font-size: 32px;
+
+    font-weight: 800;
 }
 
 .emprestimos-header p {
-  color: #64748b;
-  font-size: 15px;
+    color: #64748b;
+
+    font-size: 15px;
 }
+
 
 /* =========================================================
    TABELA
    ========================================================= */
 
 .emprestimos-tabela {
-  overflow-x: auto;
+    overflow-x: auto;
 
-  background: white;
+    background: white;
 
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
+    border: 1px solid #e5e7eb;
 
-  box-shadow:
-    0 5px 15px rgba(15, 23, 42, 0.05),
-    0 15px 40px rgba(15, 23, 42, 0.04);
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05),
+        0 15px 40px rgba(15, 23, 42, 0.04);
 }
 
 .emprestimos-tabela table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+
+    border-collapse: collapse;
 }
 
 .emprestimos-tabela th {
-  padding: 16px 18px;
+    padding: 16px 18px;
 
-  background: #f8fafc;
+    background: #f8fafc;
 
-  color: #475569;
+    color: #475569;
 
-  font-size: 12px;
-  font-weight: 700;
+    font-size: 12px;
 
-  text-align: left;
-  text-transform: uppercase;
+    font-weight: 700;
 
-  border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .emprestimos-tabela td {
-  padding: 18px;
+    padding: 18px;
 
-  color: #475569;
+    color: #475569;
 
-  font-size: 14px;
+    font-size: 14px;
 
-  border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .emprestimos-tabela tbody tr {
-  transition: background 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .emprestimos-tabela tbody tr:hover {
-  background: #f8fafc;
+    background: #f8fafc;
 }
 
 .emprestimos-tabela tbody tr:last-child td {
-  border-bottom: none;
+    border-bottom: none;
 }
+
 
 /* =========================================================
    NOME DO ALUNO E LIVRO
@@ -942,73 +959,487 @@ body {
 
 .emprestimo-aluno,
 .emprestimo-livro {
-  color: #111827;
+    color: #111827;
 
-  font-weight: 700;
+    font-weight: 700;
 }
+
 
 /* =========================================================
    STATUS
    ========================================================= */
 
 .status-emprestado {
-  display: inline-block;
+    display: inline-block;
 
-  padding: 7px 12px;
+    padding: 7px 12px;
 
-  border-radius: 20px;
+    border-radius: 20px;
 
-  background: #fef3c7;
-  color: #92400e;
+    background: #fef3c7;
 
-  font-size: 12px;
-  font-weight: 700;
+    color: #92400e;
+
+    font-size: 12px;
+
+    font-weight: 700;
 }
 
 .status-devolvido {
-  display: inline-block;
+    display: inline-block;
 
-  padding: 7px 12px;
+    padding: 7px 12px;
 
-  border-radius: 20px;
+    border-radius: 20px;
 
-  background: #dcfce7;
-  color: #166534;
+    background: #dcfce7;
 
-  font-size: 12px;
-  font-weight: 700;
+    color: #166534;
+
+    font-size: 12px;
+
+    font-weight: 700;
 }
+
 
 /* =========================================================
    SEM EMPRÉSTIMOS
    ========================================================= */
 
 .sem-emprestimos {
-  padding: 50px 20px;
+    padding: 50px 20px;
 
-  text-align: center;
+    text-align: center;
 
-  color: #64748b;
+    color: #64748b;
 
-  font-size: 15px;
+    font-size: 15px;
 }
 
+
 /* =========================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - NOTEBOOK
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .header .container {
+        gap: 20px;
+    }
+
+    .header nav {
+        gap: 4px;
+    }
+
+    .header nav a {
+        padding: 9px 12px;
+    }
+
+    .hero {
+        padding: 85px 0;
+    }
+
+    .hero h2 {
+        font-size: clamp(34px, 5vw, 54px);
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .detalhe-card {
+        max-width: 850px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 14px 0;
+    }
+
+    .header .container {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .header nav {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    body {
+        padding-top: 120px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 25px 15px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .detalhe-header {
+        padding: 35px;
+    }
+
+    .detalhe-info {
+        padding: 30px 35px;
+    }
+
+    .disponibilidade {
+        margin: 0 35px;
+    }
+
+    .descricao {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    .detalhe-acoes {
+        padding: 30px 35px 35px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
    ========================================================= */
 
 @media (max-width: 650px) {
-  .emprestimos {
-    padding: 40px 0 60px;
-  }
 
-  .emprestimos-header h2 {
-    font-size: 28px;
-  }
+    body {
+        padding-top: 150px;
+    }
 
-  .emprestimos-tabela th,
-  .emprestimos-tabela td {
-    padding: 14px;
-    white-space: nowrap;
-  }
+    .container {
+        width: 92%;
+    }
+
+    .header {
+        padding: 12px 0;
+    }
+
+    .header .container {
+        gap: 10px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+
+        text-align: center;
+    }
+
+    .header nav {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 3px;
+    }
+
+    .header nav a {
+        font-size: 12px;
+
+        padding: 7px 9px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+    }
+
+    .hero .btn {
+        padding: 12px 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .cards-section {
+        padding-top: 40px;
+
+        padding-bottom: 50px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .stats-section {
+        padding-top: 35px;
+    }
+
+    .stat-card {
+        padding: 25px;
+    }
+
+    .stat-number {
+        font-size: 38px;
+    }
+
+
+    /* =====================================================
+       DETALHES DO LIVRO
+       ===================================================== */
+
+    .livro-detalhe {
+        padding: 35px 0 50px;
+    }
+
+    .detalhe-header {
+        padding: 30px 22px;
+
+        text-align: center;
+    }
+
+    .detalhe-header h2 {
+        font-size: 30px;
+    }
+
+    .detalhe-autor {
+        font-size: 15px;
+    }
+
+    .capa-detalhe {
+        width: min(220px, 100%);
+
+        margin: 0 auto 25px;
+    }
+
+    .detalhe-info {
+        grid-template-columns: 1fr;
+
+        padding: 25px 22px;
+
+        gap: 14px;
+    }
+
+    .disponibilidade {
+        margin: 0 22px;
+
+        padding: 20px;
+    }
+
+    .descricao {
+        margin: 25px 22px 0;
+    }
+
+    .detalhe-acoes {
+        flex-direction: column;
+
+        padding: 25px 22px 30px;
+    }
+
+    .detalhe-acoes .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       CAPAS DA LISTA
+       ===================================================== */
+
+    .capa-lista {
+        height: 250px;
+    }
+
+
+    /* =====================================================
+       EMPRÉSTIMOS
+       ===================================================== */
+
+    .emprestimos {
+        padding: 35px 0 50px;
+    }
+
+    .emprestimos-header h2 {
+        font-size: 28px;
+    }
+
+    .emprestimos-tabela th,
+    .emprestimos-tabela td {
+        padding: 12px;
+
+        white-space: nowrap;
+    }
 }
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding-top: 160px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .header nav a {
+        font-size: 11px;
+
+        padding: 6px 7px;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero .btn {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h3 {
+        font-size: 19px;
+    }
+
+    .capa-lista {
+        height: 220px;
+    }
+
+    .capa-detalhe {
+        width: 190px;
+
+        max-height: 300px;
+    }
+
+    .detalhe-header h2 {
+        font-size: 26px;
+    }
+
+    .info-item {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    body {
+        padding-top: 165px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .header h1 {
+        font-size: 17px;
+    }
+
+    .header nav {
+        gap: 2px;
+    }
+
+    .header nav a {
+        font-size: 10px;
+
+        padding: 5px 6px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .capa-detalhe {
+        width: 170px;
+    }
+}
+
