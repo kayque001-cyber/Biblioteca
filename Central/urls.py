@@ -22,18 +22,6 @@ urlpatterns = [
     ),
 
     path(
-        'livros/novo/',
-        views.criar_livro,
-        name='criar_livro'
-    ),
-
-    path(
-        'livros/<int:livro_id>/editar/',
-        views.editar_livro,
-        name='editar_livro'
-    ),
-
-    path(
         'livros/<int:livro_id>/excluir/',
         views.excluir_livro,
         name='excluir_livro'

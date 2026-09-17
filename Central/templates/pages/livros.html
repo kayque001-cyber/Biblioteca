@@ -22,33 +22,17 @@
 
     <!-- HEADER -->
     <header class="header">
+      <div class="container">
+        <h1>Biblioteca Escolar</h1>
 
-        <div class="container">
-
-            <h1>Biblioteca Escolar</h1>
-
-            <nav>
-
-                <a href="{% url 'inicio' %}">
-                    Início
-                </a>
-
-                <a href="{% url 'lista_livros' %}">
-                    Livros
-                </a>
-
-                <a href="/admin/">
-                    Gerenciar
-                </a>
-                <a href="{% url 'lista_emprestimos' %}">
-                    Empréstimos
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
+        <nav>
+          <a href="{% url 'inicio' %}">Início</a>
+          <a href="{% url 'lista_livros' %}">Livros</a>
+          <a href="/admin/">Gerenciar</a>
+          <a href="{% url 'lista_emprestimos' %}">Empréstimos</a>
+        </nav>
+      </div>
+    </header
 
 
     <!-- CONTEÚDO -->
