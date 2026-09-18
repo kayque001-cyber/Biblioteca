@@ -70,10 +70,14 @@ class Emprestimo(models.Model):
         super().save(*args, **kwargs)
 
     def clean(self):
-        if self.status == 'Emprestado' and self.livro.disponiveis <= 0:
-            raise ValidationError(
-                'Este livro não possui exemplares disponíveis.'
-            )
+        if (
+            self.status == 'Emprestado'
+            and self.livro_id
+            and self.livro.disponiveis <= 0
+        ):
+            raise ValidationError({
+                'livro': 'Este livro não possui exemplares disponíveis.'
+            })
 
     def __str__(self):
         return f'{self.aluno} - {self.livro}'
